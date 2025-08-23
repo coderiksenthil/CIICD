@@ -8,15 +8,15 @@ pipeline {
     stages {
         stage('Clone GitHub Repo') {
             steps {
-                git branch: 'main', credentialsId: 'github-https', url: 'https://github.com/coderiksenthil/jenkins-pipelining'
+                git branch: 'main', credentialsId: 'github-https', url: 'https://github.com/BalajiNaidu05/piplining_pythonApp.git'
             }
         }
 
         stage('Set Up Python Virtual Environment') {
             steps {
-                bat '"C:\Users\Admin\AppData\Local\Programs\Python\Python312\" -m venv venv'
+                bat '"C:\\Users\\BALAJI NAIDU\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" -m venv venv'
                 bat '.\\venv\\Scripts\\python.exe -m pip install --upgrade pip'
-                bat '.\\venv\\Scripts\\pip install -r requirements.txt'
+                bat '.\\venv\\Scripts\\pip install flask numpy pandas tensorflow'
             }
         }
 
@@ -27,4 +27,9 @@ pipeline {
         }
     }
 }
+
+
+
+
+
 
